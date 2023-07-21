@@ -1,5 +1,4 @@
 local lsp = require('lsp-zero')
-local util = require('lspconfig/util')
 
 lsp.preset('recommended')
 
@@ -41,7 +40,8 @@ local function setBindings(client, bufnr)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("n", "<leader>vf", function() vim.lsp.buf.format() end, opts)
-    vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set("n", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set("i", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
     vim.keymap.set("n", "<leader>vh", function() vim.cmd.TroubleToggle() end)
     vim.keymap.set("n", "\\", function() vim.diagnostic.open_float() end)
 end
@@ -67,12 +67,13 @@ vim.api.nvim_create_autocmd(
     }
 )
 
-vim.diagnostic.config {
+vim.diagnostic.config({
     virtual_text = true,
     update_in_insert = true,
     signs = true,
     float = true
-}
+})
+
 lsp.setup()
 
 vim.diagnostic.config { virtual_text = true }

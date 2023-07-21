@@ -34,6 +34,8 @@ vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 vim.g.mapleader = " "
 vim.g.netrw_browsex_viewer = "firefox"
 
+vim.g.zig_fmt_autosave = 0
+
 -- Settings for CtrlSpace
 vim.cmd("set nocompatible")
 vim.cmd("set hidden")
