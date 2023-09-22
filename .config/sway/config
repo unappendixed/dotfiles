@@ -18,7 +18,7 @@ set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu fuzzel swaymsg exec --
+set $menu rofi -show drun swaymsg exec --
 
 include /etc/sway/config-vars.d/*
 
@@ -76,6 +76,9 @@ output * bg $HOME/Pictures/blue-swirl-background.jpg fit
 
     # Start your launcher
     bindsym $mod+d exec $menu
+
+    # Window switcher
+    bindsym $mod+slash exec rofi-window-action
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

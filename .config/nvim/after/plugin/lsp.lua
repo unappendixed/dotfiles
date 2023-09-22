@@ -46,6 +46,13 @@ local function setBindings(client, bufnr)
     vim.keymap.set("n", "\\", function() vim.diagnostic.open_float() end)
 end
 
+
+require('lspconfig').svelte.setup{
+    plugin = {
+        css = {enable = true}
+    }
+}
+
 -- require('lspconfig').volar.setup {
 --     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
 --     init_options = {
