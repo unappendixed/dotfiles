@@ -13,7 +13,7 @@ export XDG_CONFIG_HOME='/home/brad/.config/'
 export logseq='/home/brad/Documents/logseq-graphs/'
 
 alias ls='ls --color'
-PROMPT='%T %B%F{green}%1~%f%b $ '
+PROMPT='%2T %B%F{green}%1~%f%b $ '
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall

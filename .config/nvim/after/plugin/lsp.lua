@@ -47,11 +47,11 @@ local function setBindings(client, bufnr)
 end
 
 
-require('lspconfig').svelte.setup{
-    plugin = {
-        css = {enable = true}
-    }
-}
+-- require('lspconfig').svelte.setup{
+--     plugin = {
+--         css = {enable = true}
+--     }
+-- }
 
 -- require('lspconfig').volar.setup {
 --     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
