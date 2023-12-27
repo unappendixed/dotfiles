@@ -7,18 +7,24 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    use 'cohama/lexima.vim'
+    -- use 'cohama/lexima.vim'
+    -- use {'windwp/nvim-autopairs', config=function() 
+    --     require("nvim-autopairs").setup{
+    --         disable_filetype = { "markdown", "md" }
+    --     }
+    -- end}
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        'nvim-telescope/telescope.nvim', tag = '0.1.4',
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
-
+    
     use({
         "catppuccin/nvim",
         as = "catppuccin"
     })
+
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
@@ -37,7 +43,7 @@ return require('packer').startup(function(use)
 
     use('tpope/vim-fugitive')
 
-    -- use ('feline-nvim/feline.nvim')
+    -- Theming
     use {
         'famiu/feline.nvim',
         requires = {
@@ -53,11 +59,6 @@ return require('packer').startup(function(use)
     }
 
     --use ('m4xshen/autoclose.nvim')
-    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-        require("toggleterm").setup()
-    end }
-
-    -- use("mrjones2014/nvim-ts-rainbow")
     -- Lua
     use {
         "folke/trouble.nvim",
@@ -118,7 +119,7 @@ return require('packer').startup(function(use)
 
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
+        branch = 'v3.x',
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },   -- Required

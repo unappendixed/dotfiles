@@ -1,4 +1,5 @@
 vim.opt.nu = true
+
 vim.opt.wrap = false
 --vim.opt.autochdr = true
 vim.opt.relativenumber = true
@@ -26,8 +27,9 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+vim.cmd("set listchars=trail:•,multispace:•,eol:¶")
 
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "80"
 
 vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 
