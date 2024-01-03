@@ -3,4 +3,9 @@ function ColorMyPencils(color)
 	vim.cmd.colorscheme(color)
 end
 
+require('catppuccin').setup({
+    -- values: latte, frappe, machiatto, mocha
+    flavour = "mocha"
+})
+
 ColorMyPencils()
