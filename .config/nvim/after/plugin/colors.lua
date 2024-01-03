@@ -5,7 +5,10 @@ end
 
 require('catppuccin').setup({
     -- values: latte, frappe, machiatto, mocha
-    flavour = "mocha"
+    flavour = "mocha",
+    styles = {
+        conditionals = {}
+    }
 })
 
 ColorMyPencils()
