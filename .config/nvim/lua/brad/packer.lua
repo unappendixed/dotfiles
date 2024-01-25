@@ -25,6 +25,8 @@ return require('packer').startup(function(use)
         as = "catppuccin"
     })
 
+    use {'stevearc/aerial.nvim', as = 'aerial'}
+
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
@@ -85,7 +87,6 @@ return require('packer').startup(function(use)
                     vim.cmd("set norelativenumber")
                     vim.keymap.set("n", "j", "gj")
                     vim.keymap.set("n", "k", "gk")
-                    vim.keymap.set("i", "<Enter>", "<Enter><Enter>")
                     vim.opt.colorcolumn = "0"
                 end,
                 on_close = function(win)
@@ -94,7 +95,6 @@ return require('packer').startup(function(use)
                     vim.cmd("set relativenumber")
                     vim.keymap.set("n", "j", "j")
                     vim.keymap.set("n", "k", "k")
-                    vim.keymap.set("i", "<Enter>", "<Enter>")
                     vim.opt.colorcolumn = "120"
                 end
             }

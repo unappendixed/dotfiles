@@ -37,7 +37,8 @@ vim.keymap.set("n", "<C-u", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
---CtrlSpace
+--Aerial code outline
+vim.keymap.set("n", "<leader>vo", "<cmd>AerialToggle!<CR>")
 
 --Greatest remap ever apparently
 vim.keymap.set("x", "<leader>p", "\"_dP")
