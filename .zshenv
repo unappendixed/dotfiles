@@ -6,6 +6,7 @@ path+=(/usr/local/*/bin(N-/))
 path+=(/usr/local/go/bin)
 path+=(/home/brad/go/bin)
 path+=(/usr/local/thunderbird/)
+path+=(/home/brad/.nodejs/bin/)
 
 export XDG_DATA_DIRS="/usr/share:/usr/local/share:"
 XDG_DATA_DIRS+="/var/lib/flatpak/exports/share:"

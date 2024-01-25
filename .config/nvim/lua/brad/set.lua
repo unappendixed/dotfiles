@@ -33,6 +33,12 @@ vim.opt.colorcolumn = "80"
 
 vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevelstart = 99
+
+-- Uncomment and set number of columns to show fold regions
+-- vim.opt.foldcolumn = "4"
+
 vim.g.mapleader = " "
 vim.g.netrw_browsex_viewer = "firefox"
 
