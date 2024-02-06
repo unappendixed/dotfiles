@@ -3,17 +3,17 @@
 unsetopt autocd
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/brad/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 export MOZ_ENABLE_MOZ=1
 
 export XDG_CONFIG_HOME=$HOME/.config/
 
-export logseq='/home/brad/Documents/logseq-graphs/'
+export logseq='$HOME/Documents/logseq-graphs/'
 
 # Make swaymsg work from inside tty
-
-export SWAYSOCK=$(ls /run/user/$(id -u)/sway-ipc.* | head -1)
+# not working for some reason
+#export SWAYSOCK=$(find /run/user/$(id -u)/ -maxdepth 2 -name sway-ipc.* | head -1)
 
 alias ls='ls --color'
 PROMPT='%2T %B%F{green}%1~%f%b $ '

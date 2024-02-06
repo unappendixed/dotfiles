@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": ["tray", "pulseaudio", "network", "backlight", "keyboard-state", "battery", "battery#bat2", "clock", "clock#cal"],
+    "modules-right": ["tray", "pulseaudio", "network", "backlight", "keyboard-state", "clock", "clock#cal"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -32,6 +32,9 @@
             "locked": "",
             "unlocked": ""
         }
+    },
+    "sway/window": {
+        "icon": false,
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
