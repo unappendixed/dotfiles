@@ -18,7 +18,7 @@ set $right l
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
- set $menu wofi --show drun swaymsg exec --
+ set $menu wofi --show drun,run swaymsg exec --
 
 
 include /etc/sway/config-vars.d/*
@@ -79,8 +79,10 @@ output * bg $HOME/Pictures/blue-swirl-background.jpg fit
     # Start your launcher
     bindsym $mod+d exec $menu
 
+
     # Window switcher
-    bindsym $mod+slash exec rofi-window-action
+    #bindsym $mod+slash exec rofi-window-action
+    bindsym $mod+slash exec '$HOME/.config/sway/scripts/window_selector.sh'
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
