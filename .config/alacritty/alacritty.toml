@@ -1,5 +1,10 @@
+import = [ 
+    "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
 [font]
 normal = { family = "RobotoMono Nerd Font", style = "Regular" }
 
 [window]
 decorations = "None"
+
