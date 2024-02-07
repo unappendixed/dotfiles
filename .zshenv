@@ -8,6 +8,8 @@ path+=($HOME/go/bin)
 path+=(/usr/local/thunderbird/)
 path+=($HOME/.nodejs/bin/)
 path+=($HOME/.local/bin/)
+path+=($HOME/.node/node_modules/bin)
+path+=($HOME/.node/bin)
 
 export XDG_DATA_DIRS="/usr/share:/usr/local/share:"
 XDG_DATA_DIRS+="/var/lib/flatpak/exports/share:"
