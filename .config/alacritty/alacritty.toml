@@ -1,0 +1,5 @@
+[font]
+normal = { family = "RobotoMono Nerd Font", style = "Regular" }
+
+[window]
+decorations = "None"
