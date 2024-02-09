@@ -42,9 +42,18 @@ vim.opt.foldlevelstart = 99
 vim.g.mapleader = " "
 vim.g.netrw_browsex_viewer = "firefox"
 
+-- open netrw as tree by default
+vim.g.netrw_liststyle=3
+
 vim.g.zig_fmt_autosave = 0
 
 -- Settings for CtrlSpace
 vim.cmd("set nocompatible")
 vim.cmd("set hidden")
 
+-- Diagnostic icons
+local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end

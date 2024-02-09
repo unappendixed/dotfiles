@@ -72,6 +72,11 @@ return require('packer').startup(function(use)
     }
 
     use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+   }
+
+    use {
         "folke/zen-mode.nvim",
         config = function()
             require("zen-mode").setup {
@@ -101,7 +106,7 @@ return require('packer').startup(function(use)
         end
     }
 
-    use ('Pocco81/auto-save.nvim')
+    -- use ('Pocco81/auto-save.ppvm')
 
 
     use('mfussenegger/nvim-dap')
