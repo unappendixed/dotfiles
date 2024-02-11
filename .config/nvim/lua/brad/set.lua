@@ -43,7 +43,7 @@ vim.g.mapleader = " "
 vim.g.netrw_browsex_viewer = "firefox"
 
 -- open netrw as tree by default
-vim.g.netrw_liststyle=3
+-- vim.g.netrw_liststyle=3
 
 vim.g.zig_fmt_autosave = 0
 
