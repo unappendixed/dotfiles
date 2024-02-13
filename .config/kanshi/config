@@ -1,0 +1,10 @@
+profile dflt {
+    output "Samsung Electric Company SAMSUNG 0x00000F00" disable
+    output "Dell Inc. DELL U2415 PVJVW55C1NPL" position -1920,0
+    output "Unknown MSI G27C4 0x000000E6" mode 1920x1080@165 position 0,0
+}
+
+profile work {
+    output "Samsung Electric Company SAMSUNG 0x00000F00" disable
+    output "Dell Inc. DELL U2415 PVJVW55C1NPL" position 0,0
+}
