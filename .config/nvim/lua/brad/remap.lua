@@ -56,3 +56,15 @@ vim.keymap.set("n", "<C-M-l>", function() vim.lsp.buf.format() end)
 
 -- magic replace
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- command mode
+vim.keymap.set("c", "<C-a>", "<Home>")
+vim.keymap.set("c", "<C-e>", "<End>")
+vim.keymap.set("c", "<M-b>", "<C-Left>")
+vim.keymap.set("c", "<M-f>", "<C-Right>")
+vim.keymap.set("c", "<C-b>", "<Left>")
+vim.keymap.set("c", "<C-f>", "<Right>")
+vim.keymap.set("c", "<C-d>", "<Del>")
+vim.keymap.set("c", "<M-d>", "<C-Right><C-w>")
+vim.keymap.set("c", "", "<C-w>")
+
