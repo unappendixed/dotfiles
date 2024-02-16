@@ -33,12 +33,6 @@
             "unlocked": ""
         }
     },
-<<<<<<< HEAD
-=======
-    "sway/window": {
-        "icon": false,
-    },
->>>>>>> origin/ubuntu-desktop
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
