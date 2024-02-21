@@ -214,7 +214,6 @@ label:focus {
 }
 
 #mpris {
-    font-weight: bold;
     padding: 0 5px;
     background-color: @modal-color-hex;
     min-width: 350px;
