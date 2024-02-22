@@ -4,8 +4,11 @@
     font-size: 13px;
 }
 
+@define-color bg-color-hex #332255;
+@define-color modal-color-hex #2980b9;
+
 window#waybar {
-    background-color: #332255;
+    background-color: @bg-color-hex;
     border-bottom: 1px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
     transition-property: background-color;
@@ -210,6 +213,12 @@ label:focus {
     background-color: #eb4d4b;
 }
 
+#mpris {
+    padding: 0 5px;
+    background-color: @modal-color-hex;
+    min-width: 350px;
+}
+
 #tray {
     background-color: #2980b9;
 }
@@ -261,7 +270,7 @@ label:focus {
     background: #97e1ad;
     color: #000000;
     padding: 0 0px;
-    margin: 0 5px;
+    /* margin: 0 5px; */
     min-width: 16px;
 }
 
