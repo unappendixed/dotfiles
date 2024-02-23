@@ -59,7 +59,9 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "format": "{:%I:%M %p}"
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%I:%M:%S %p}",
+        "interval": 1
     },
     "clock#cal": {
         // "timezone": "America/New_York",
