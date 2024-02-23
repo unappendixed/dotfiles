@@ -168,12 +168,15 @@
     //     "escape": true
     // },
     "mpris": {
-        "format": "{status_icon}\t{player}: {title} - {artist}",
+        "format": "{status_icon}\t{title} - {artist}\t{player_icon}",
         "on-click-right": "playerctld shift",
         "min-length": "40",
         "max-length": "40",
         "title-len": 20,
         "artist-len": 20,
+        "player-icons": {
+            "firefox": ""
+        },
         "status-icons": {
             "playing": "\uf04b",
             "paused": "\uf04c",
