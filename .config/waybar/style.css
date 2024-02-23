@@ -216,7 +216,22 @@ label:focus {
 #mpris {
     padding: 0 5px;
     background-color: @modal-color-hex;
-    min-width: 350px;
+    min-width: 300px;
+    border: 2px solid transparent;
+}
+
+#mpris.playing {
+    animation-name: pulse-outline;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+}
+
+@keyframes pulse-outline {
+    to {
+        border: 2px solid white;
+    }
 }
 
 #tray {
