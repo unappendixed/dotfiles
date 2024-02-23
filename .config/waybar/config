@@ -17,9 +17,10 @@
         "mpris",
         "tray",
         "pulseaudio",
-        // "network",
+        "network",
         "backlight",
         "keyboard-state",
+        "battery",
         "clock",
         "clock#cal"
     ],
