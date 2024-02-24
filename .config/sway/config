@@ -68,7 +68,7 @@ output * bg $HOME/Pictures/blue-swirl-background.jpg fit
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term -e '/home/brad/.config/sway/scripts/tmux-start-attach.sh'
+    bindsym $mod+Return exec $term -e "$HOME/.config/sway/scripts/tmux-start-attach.sh"
 
     # Kill focused window
     bindsym $mod+Shift+q kill
