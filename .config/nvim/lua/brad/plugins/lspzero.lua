@@ -3,12 +3,11 @@ return {
     branch = 'v3.x',
     dependencies = {
         -- LSP Support
-        { 'neovim/nvim-lspconfig' },   -- Required
+        { 'neovim/nvim-lspconfig' }, -- Required
 
         {
-            'williamboman/mason.nvim' ,
+            'williamboman/mason.nvim',
             config = function()
-
                 require('mason').setup({})
 
                 require('mason-lspconfig').setup({
@@ -17,15 +16,14 @@ return {
                     }
                 })
             end
-        }, -- Optional
+        },                                       -- Optional
 
         { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
         -- Autocompletion
-        { 
-            'hrsh7th/nvim-cmp', 
+        {
+            'hrsh7th/nvim-cmp',
             config = function()
-
                 local cmp = require('cmp')
                 local cmp_action = require('lsp-zero').cmp_action()
 
@@ -41,20 +39,35 @@ return {
                     })
                 })
             end,
-        }, -- Required
+        },                          -- Required
 
         { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-        { 'hrsh7th/cmp-buffer' }, -- Optional
-        { 'hrsh7th/cmp-path' }, -- Optional
-        { 'saadparwaiz1/cmp_luasnip' }, -- Optional
+        { 'hrsh7th/cmp-buffer' },   -- Optional
+        { 'hrsh7th/cmp-path' },     -- Optional
+        {
+            'saadparwaiz1/cmp_luasnip',
+            config = function()
+                require 'cmp'.setup {
+                    snippet = {
+                        expand = function(args)
+                            require 'luasnip'.lsp_expand(args.body)
+                        end
+                    },
+
+                    sources = {
+                        { name = 'luasnip' },
+                        -- more sources
+                    },
+                }
+            end
+        },                          -- Optional
         { 'hrsh7th/cmp-nvim-lua' }, -- Optional
 
         -- Snippets
-        { 'L3MON4D3/LuaSnip' },   -- Required
-        { 'rafamadriz/friendly-snippets' }, -- Optional
+        { 'L3MON4D3/LuaSnip' },             -- Required
+        -- { 'rafamadriz/friendly-snippets' }, -- Optional
     },
     config = function()
-
         local lsp = require('lsp-zero')
 
         lsp.preset('recommended')
@@ -76,7 +89,7 @@ return {
             vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
             vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
             vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-            vim.keymap.set({"n", "i", "v"}, "<M-CR>", function() vim.lsp.buf.code_action() end, opts)
+            vim.keymap.set({ "n", "i", "v" }, "<M-CR>", function() vim.lsp.buf.code_action() end, opts)
             vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
             vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
             vim.keymap.set("n", "<leader>vf", function() vim.lsp.buf.format() end, opts)
@@ -89,10 +102,10 @@ return {
         lsp.on_attach(setBindings)
 
         vim.api.nvim_create_autocmd(
-        "FileType", {
-            pattern = { "qf" },
-            command = [[nnoremap <buffer> <CR> <CR>:cclose<CR>]]
-        }
+            "FileType", {
+                pattern = { "qf" },
+                command = [[nnoremap <buffer> <CR> <CR>:cclose<CR>]]
+            }
         )
 
         vim.diagnostic.config({
