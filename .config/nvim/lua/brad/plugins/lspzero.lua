@@ -36,36 +36,29 @@ return {
                         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
                         ['<CR>'] = cmp.mapping.confirm({ select = true }),
                         ['<C-Space>'] = cmp.mapping.complete(),
-                    })
-                })
-            end,
-        },                          -- Required
-
-        { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-        { 'hrsh7th/cmp-buffer' },   -- Optional
-        { 'hrsh7th/cmp-path' },     -- Optional
-        {
-            'saadparwaiz1/cmp_luasnip',
-            config = function()
-                require 'cmp'.setup {
+                    }),
                     snippet = {
                         expand = function(args)
-                            require 'luasnip'.lsp_expand(args.body)
+                            require('luasnip').lsp_expand(args.body)
                         end
                     },
+                })
 
-                    sources = {
-                        { name = 'luasnip' },
-                        -- more sources
-                    },
-                }
-            end
-        },                          -- Optional
-        { 'hrsh7th/cmp-nvim-lua' }, -- Optional
+                local config = cmp.get_config()
+                table.insert(config.sources, { name = "luasnip" })
+                cmp.setup(config)
+            end,
+        },                              -- Required
+
+        { 'hrsh7th/cmp-nvim-lsp' },     -- Required
+        { 'hrsh7th/cmp-buffer' },       -- Optional
+        { 'hrsh7th/cmp-path' },         -- Optional
+        { 'saadparwaiz1/cmp_luasnip' }, -- Optional
+        { 'hrsh7th/cmp-nvim-lua' },     -- Optional
 
         -- Snippets
         { 'L3MON4D3/LuaSnip' },             -- Required
-        -- { 'rafamadriz/friendly-snippets' }, -- Optional
+        { 'rafamadriz/friendly-snippets' }, -- Optional
     },
     config = function()
         local lsp = require('lsp-zero')

@@ -21,7 +21,8 @@ return {
 
                 highlight = {
                     -- ...
-                    enable = true
+                    enable = true,
+                    additional_vim_regex_highlighting = {"javascript"},
                 },
                 -- ...
                 rainbow = {
