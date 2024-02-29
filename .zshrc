@@ -64,10 +64,10 @@ precmd() {
         # Oh hey, nothing from vcs_info, so we got more space.
         # Let's print a longer part of $PWD...
         PROMPT='%2T %B%F{green}%1~%f%b $ '
-        PROMPT="%F{cyan}┌%f%2T %B%F{green}%1~%f%b ${newline}%F{cyan}└──▷%f "
+        PROMPT="%F{cyan}╭─%f%2T %B%F{green}%1~%f%b ${newline}%F{cyan}╰──▷%f "
     else
         # vcs_info found something, that needs space. So a shorter $PWD
         # makes sense.
-        PROMPT="%F{cyan}┌%f%2T %B%F{green}%1~%f%b ~ ${vcs_info_msg_0_} ${newline}%F{cyan}└──▷%f "
+        PROMPT="%F{cyan}╭─%f%2T %B%F{green}%1~%f%b ~ ${vcs_info_msg_0_} ${newline}%F{cyan}╰──▷%f "
     fi
 }
