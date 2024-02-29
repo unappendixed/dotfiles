@@ -2,10 +2,10 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("t", "<C-x>", "<C-\\><C-n>", { silent = true })
 vim.keymap.set("n", "<leader>w", "<C-w>")
-vim.keymap.set("n", "<C-h>", function() vim.cmd("wincmd h") end)
-vim.keymap.set("n", "<C-j>", function() vim.cmd("wincmd j") end)
-vim.keymap.set("n", "<C-k>", function() vim.cmd("wincmd k") end)
-vim.keymap.set("n", "<C-l>", function() vim.cmd("wincmd l") end)
+vim.keymap.set("n", "<M-h>", function() vim.cmd("wincmd h") end)
+vim.keymap.set("n", "<M-j>", function() vim.cmd("wincmd j") end)
+vim.keymap.set("n", "<M-k>", function() vim.cmd("wincmd k") end)
+vim.keymap.set("n", "<M-l>", function() vim.cmd("wincmd l") end)
 vim.keymap.set("i", "<C-c>", "<Esc>")
 -- disabled the below remap because it's annoying when keys lag behind during input.
 -- vim.keymap.set("i", "jk", "<Esc>")
@@ -52,7 +52,7 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>Y", "\"+Y")
 
 -- apparently uppercase q is bad
-vim.keymap.set("n", "Q", "<nop")
+vim.keymap.set("n", "Q", "<nop>")
 
 -- format all
 vim.keymap.set("n", "<C-M-l>", function() vim.lsp.buf.format() end)
