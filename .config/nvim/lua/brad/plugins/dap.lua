@@ -150,6 +150,39 @@ return {
                         cwd = "${workspaceFolder}",
                         console = "integratedTerminal",
                         internalConsoleOptions = "neverOpen",
+                    },
+                    {
+                        type = "pwa-node",
+                        request = "launch",
+                        name = "Debug Playwright Tests",
+                        -- trace = true, -- include debugger info
+                        runtimeExecutable = "node",
+                        runtimeArgs = {
+                            "./node_modules/@playwright/test/cli.js",
+                            "test",
+                            "-j 1"
+                        },
+                        rootPath = "${workspaceFolder}",
+                        cwd = "${workspaceFolder}",
+                        console = "integratedTerminal",
+                        internalConsoleOptions = "neverOpen",
+                    },
+                    {
+                        type = "pwa-node",
+                        request = "launch",
+                        name = "Debug Playwright Tests (headed)",
+                        -- trace = true, -- include debugger info
+                        runtimeExecutable = "node",
+                        runtimeArgs = {
+                            "./node_modules/@playwright/test/cli.js",
+                            "test",
+                            "--headed",
+                            "-j 1",
+                        },
+                        rootPath = "${workspaceFolder}",
+                        cwd = "${workspaceFolder}",
+                        console = "integratedTerminal",
+                        internalConsoleOptions = "neverOpen",
                     }
                 }
             end
