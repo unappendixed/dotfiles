@@ -27,3 +27,5 @@ export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1
 export CALIBRE_USE_DARK_PALETTE=1
 export MOZ_ENABLE_WAYLAND=1
 export TMUXPATHS=$HOME/code:$HOME/code/gamedev:$HOME/gvr:$HOME/.config:$HOME:$HOME/code/from-source
+
+export N_PREFIX=$HOME/.node
