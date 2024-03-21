@@ -28,3 +28,5 @@
     cmd = difft "$LOCAL" "$REMOTE"
 [pager]
     difftool = true
+[includeIf "gitdir:C:/Users/carlbr/Code/GVR/**"]
+	path = C:/Users/carlbr/Code/GVR/gvr.gitconfig
