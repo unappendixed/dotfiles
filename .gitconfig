@@ -29,4 +29,4 @@
 [pager]
     difftool = true
 [includeIf "gitdir:C:/Users/carlbr/Code/GVR/**"]
-	path = C:/Users/carlbr/Code/GVR/gvr.gitconfig
+	path = .gvr.gitconfig
