@@ -9,3 +9,7 @@ size = 14
 [window]
 decorations = "None"
 
+[keyboard]
+bindings = [
+{key = "Backspace", mods = "Control", chars = "\u0017"},
+]
