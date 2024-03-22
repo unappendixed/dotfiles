@@ -71,3 +71,7 @@ precmd() {
         PROMPT="%F{cyan}╭─%f%2T %B%F{green}%1~%f%b ~ ${vcs_info_msg_0_} ${newline}%F{cyan}╰──▷%f "
     fi
 }
+
+### ALIASES
+
+alias explore="tree -C | less -R"
