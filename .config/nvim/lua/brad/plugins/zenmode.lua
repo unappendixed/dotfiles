@@ -6,6 +6,7 @@ return {
                 options = {
                     number = true,
                 },
+                width = 100,
             },
             plugins = {
                 options = {
