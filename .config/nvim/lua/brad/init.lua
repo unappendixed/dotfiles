@@ -6,3 +6,5 @@ require("brad.remap")
 
 require("brad.lazy-bootstrap")
 require("brad.lazy")
+
+require("brad.autocmds")
