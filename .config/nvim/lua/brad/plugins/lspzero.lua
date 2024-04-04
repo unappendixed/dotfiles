@@ -75,6 +75,7 @@ return {
         local function setBindings(client, bufnr)
             local opts = { buffer = bufnr, remap = false }
 
+
             vim.keymap.set("n", "gd", function() vim.lsp.buf.definition({ reuse_win = true }) end, opts)
             vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
             vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -87,9 +88,11 @@ return {
             vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
             vim.keymap.set("n", "<leader>vf", function() vim.lsp.buf.format() end, opts)
             vim.keymap.set("i", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
+            vim.keymap.set("n", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
             vim.keymap.set("n", "<leader>vh", function() vim.cmd.TroubleToggle() end)
             vim.keymap.set("n", "\\", function() vim.diagnostic.open_float() end)
         end
+
 
 
         lsp.on_attach(setBindings)
@@ -109,5 +112,19 @@ return {
         })
 
         lsp.setup()
+
+        local lspconfig = require("lspconfig")
+
+        lspconfig.emmet_language_server.setup({
+            filetypes = { "css", "eruby", "html", "javascript",
+                "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact", "vue",
+                "templ" }
+        })
+
+        lspconfig.htmx.setup({
+            filetypes = { "html", "templ" }
+        })
+
+        vim.filetype.add({ extension = { templ = "templ" } })
     end,
 }
