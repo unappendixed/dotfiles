@@ -3,7 +3,17 @@ return {
     branch = 'v3.x',
     dependencies = {
         -- LSP Support
-        { 'neovim/nvim-lspconfig' }, -- Required
+        {
+            'neovim/nvim-lspconfig',
+            dependencies = {
+                {
+                    "folke/neodev.nvim",
+                    config = function()
+                        require("neodev").setup({})
+                    end
+                }
+            }
+        }, -- Required
 
         {
             'williamboman/mason.nvim',
@@ -23,6 +33,9 @@ return {
         -- Autocompletion
         {
             'hrsh7th/nvim-cmp',
+            dependencies = {
+                { "hrsh7th/cmp-nvim-lua" }
+            },
             config = function()
                 local cmp = require('cmp')
                 local cmp_action = require('lsp-zero').cmp_action()
@@ -53,7 +66,6 @@ return {
         { 'hrsh7th/cmp-buffer' },       -- Optional
         { 'hrsh7th/cmp-path' },         -- Optional
         { 'saadparwaiz1/cmp_luasnip' }, -- Optional
-        { 'hrsh7th/cmp-nvim-lua' },     -- Optional
 
         -- Snippets
         { 'L3MON4D3/LuaSnip' },             -- Required

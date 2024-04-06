@@ -2,10 +2,19 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("t", "<C-x>", "<C-\\><C-n>", { silent = true })
 vim.keymap.set("n", "<leader>w", "<C-w>")
+
+-- Split navigation
 vim.keymap.set("n", "<M-h>", function() vim.cmd("wincmd h") end)
 vim.keymap.set("n", "<M-j>", function() vim.cmd("wincmd j") end)
 vim.keymap.set("n", "<M-k>", function() vim.cmd("wincmd k") end)
 vim.keymap.set("n", "<M-l>", function() vim.cmd("wincmd l") end)
+
+--Split resizing
+vim.keymap.set("n", "<M-,>", "<C-w><")
+vim.keymap.set("n", "<M-.>", "<C-w>>")
+vim.keymap.set("n", "<M-->", "<C-w>-")
+vim.keymap.set("n", "<M-=>", "<C-w>+")
+
 vim.keymap.set("i", "<C-c>", "<Esc>")
 -- disabled the below remap because it's annoying when keys lag behind during input.
 -- vim.keymap.set("i", "jk", "<Esc>")
