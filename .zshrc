@@ -1,4 +1,3 @@
-
 # Lines configured by zsh-newuser-install
 unsetopt autocd
 # End of lines configured by zsh-newuser-install
@@ -75,3 +74,10 @@ precmd() {
 ### ALIASES
 
 alias explore="tree -C | less -R"
+
+### SOURCE
+
+. "$HOME/.local/programs/asdf/asdf.sh"
+
+# opam configuration
+[[ ! -r /home/unappendixed/.opam/opam-init/init.zsh ]] || source /home/unappendixed/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
