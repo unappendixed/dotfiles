@@ -15,10 +15,10 @@ return {
                 }
             },
             on_open = function(win)
-                vim.cmd("set wrap")
-                vim.cmd("set linebreak")
-                vim.cmd("set nonumber")
-                vim.cmd("set norelativenumber")
+                vim.opt.linebreak = true
+                vim.opt.wrap = true
+                vim.opt.number = false
+                vim.opt.relativenumber = false
                 vim.keymap.set("n", "j", "gj")
                 vim.keymap.set("n", "k", "gk")
                 vim.keymap.set("v", "j", "gj")
@@ -26,9 +26,10 @@ return {
                 vim.opt.colorcolumn = "0"
             end,
             on_close = function(win)
-                vim.cmd("set nowrap")
-                vim.cmd("set number")
-                vim.cmd("set relativenumber")
+                vim.opt.wrap = false
+                vim.opt.linebreak = false
+                vim.opt.number = true
+                vim.opt.relativenumber = true
                 vim.keymap.set("n", "j", "j")
                 vim.keymap.set("n", "k", "k")
                 vim.keymap.set("v", "j", "j")
