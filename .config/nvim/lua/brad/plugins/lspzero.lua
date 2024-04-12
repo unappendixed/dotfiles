@@ -98,6 +98,7 @@ return {
             vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
             vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
             vim.keymap.set("n", "<leader>vf", function() vim.lsp.buf.format() end, opts)
+            vim.keymap.set("n", "<leader>vsr", "<cmd>LspRestart<CR>")
             vim.keymap.set("i", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
             vim.keymap.set("n", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
             vim.keymap.set("n", "<leader>vh", function() vim.cmd.TroubleToggle() end)
