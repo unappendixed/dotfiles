@@ -1,4 +1,3 @@
-
 # Lines configured by zsh-newuser-install
 unsetopt autocd
 # End of lines configured by zsh-newuser-install
@@ -22,6 +21,16 @@ compinit
 # End of lines added by compinstall
 #
 unsetopt nomatch
+
+# HISTORY SETUP
+setopt SHARE_HISTORY
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt HIST_EXPIRE_DUPS_FIRST
+
+bindkey ^P history-search-backward
+bindkey ^N history-search-forward
 
 
 export NVM_DIR="$HOME/.config//nvm"
