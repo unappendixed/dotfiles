@@ -1,0 +1,10 @@
+{
+    "error check" : {
+        "prefix": "ienn",
+        "body": [
+            "if err != nil {",
+            "\t$0",
+            "}"
+        ]
+    }
+}
