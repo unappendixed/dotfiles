@@ -84,3 +84,6 @@ precmd() {
 ### ALIASES
 
 alias explore="tree -C | less -R"
+
+# opam configuration
+[[ ! -r /home/brad/.opam/opam-init/init.zsh ]] || source /home/brad/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
