@@ -22,6 +22,16 @@ compinit
 #
 unsetopt nomatch
 
+# HISTORY SETUP
+setopt SHARE_HISTORY
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt HIST_EXPIRE_DUPS_FIRST
+
+bindkey ^P history-search-backward
+bindkey ^N history-search-forward
+
 
 export NVM_DIR="$HOME/.config//nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
