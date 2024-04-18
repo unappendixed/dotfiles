@@ -137,6 +137,16 @@ return {
             filetypes = { "html", "templ" }
         })
 
+        lspconfig.nil_ls.setup({
+            settings = {
+                ['nil'] = {
+                    formatting = {
+                        command = {"nixpkgs-fmt"}
+                    }
+                }
+            }
+        })
+
         vim.filetype.add({ extension = { templ = "templ" } })
     end,
 }
