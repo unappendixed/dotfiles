@@ -7,6 +7,7 @@ vim.opt.tabstop = 4
 vim.opt.showtabline = 0
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.breakat = " ^I!@*-+;:/?" -- remove ., from breakat list for better wrapping
 
 vim.opt.smartindent = true
 

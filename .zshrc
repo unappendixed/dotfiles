@@ -85,5 +85,14 @@ precmd() {
 
 alias explore="tree -C | less -R"
 
+<<<<<<< HEAD
 # opam configuration
 [[ ! -r /home/brad/.opam/opam-init/init.zsh ]] || source /home/brad/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+=======
+### SOURCE
+
+. "$HOME/.local/programs/asdf/asdf.sh"
+
+# opam configuration
+[[ ! -r /home/unappendixed/.opam/opam-init/init.zsh ]] || source /home/unappendixed/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+>>>>>>> ubuntu-desktop
