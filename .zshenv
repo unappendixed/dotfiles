@@ -30,3 +30,5 @@ export MOZ_ENABLE_WAYLAND=1
 export TMUXPATHS=$HOME/code:$HOME/code/gamedev:$HOME/gvr:$HOME/.config:$HOME:$HOME/code/from-source:$HOME/writing
 
 export N_PREFIX=$HOME/.node
+
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
