@@ -85,9 +85,5 @@ precmd() {
 
 alias explore="tree -C | less -R"
 
-### SOURCE
+. $HOME/.zsh_aliases
 
-. "$HOME/.local/programs/asdf/asdf.sh"
-
-# opam configuration
-[[ ! -r /home/unappendixed/.opam/opam-init/init.zsh ]] || source /home/unappendixed/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
