@@ -3,3 +3,5 @@ alias bw-search=$'rbw get $(rbw ls --fields="name,user,id" \\
     | fzf -d " | " --with-nth=1..-3 \\
     | cut -s -d "|" -f 2) \\
     | xargs wl-copy && echo Password copied to clipboard.' \\ # xargs to strip whitespace
+
+alias fix-headset='pactl set-card-profile alsa_card.usb-HP__Inc_HyperX_Cloud_III_Wireless_0000000000000000-00 off && pactl set-card-profile alsa_card.usb-HP__Inc_HyperX_Cloud_III_Wireless_0000000000000000-00 output:analog-stereo+input:mono-fallback'
