@@ -1,14 +1,8 @@
 [credential "https://github.com"]
-	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [user]
 	email = brad@bscarlson.com
 	name = Unappendixed
-[credential]
-	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
-	credentialStore = gpg
-[credential "https://dev.azure.com"]
-	useHttpPath = true
 [core]
 	editor = nvim
 [pull]
@@ -17,9 +11,9 @@
 	defaultBranch = main
 [alias]
 	install-alias = ! git config --local alias.ensure-update '! git fetch && git submodule update --init --recursive --remote'
-    graph = log --oneline --graph --all
-    dft = difftool
-    dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
+	graph = log --oneline --graph --all
+	dft = difftool
+	dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
 [diff]
     tool = difftastic
 [difftool]

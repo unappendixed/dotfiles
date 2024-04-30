@@ -1,3 +1,6 @@
 [user]
     email = bcarlson@gvrealtors.ca
     name = Brad Carlson
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+	credentialStore = wincredman
