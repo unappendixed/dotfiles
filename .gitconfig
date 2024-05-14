@@ -2,7 +2,7 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [user]
-	email = brad@bscarlson.com
+	email = 38593737+unappendixed@users.noreply.github.com
 	name = Unappendixed
 [credential]
 	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
