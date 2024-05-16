@@ -224,6 +224,9 @@ mode "resize" {
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
 
+    bindsym backslash resize set 50ppt 100ppt
+    bindsym minus resize set 100ppt 50ppt
+
     # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
     bindsym Down resize grow height 10px
