@@ -1,6 +1,7 @@
 return {
 
     "famiu/feline.nvim",
+    enabled = false,
     dependencies = {
         { "lewis6991/gitsigns.nvim", config = function() require('gitsigns').setup() end },
         "kyazdani42/nvim-web-devicons",
