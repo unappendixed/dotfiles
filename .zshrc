@@ -3,6 +3,7 @@ unsetopt autocd
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '$HOME/.zshrc'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 export MOZ_ENABLE_MOZ=1
 
