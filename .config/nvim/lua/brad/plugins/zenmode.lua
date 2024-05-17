@@ -7,6 +7,7 @@ return {
                     number = true,
                 },
                 width = 100,
+                height = 90,
             },
             plugins = {
                 options = {
