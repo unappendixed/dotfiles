@@ -85,6 +85,7 @@ precmd() {
 ### ALIASES
 
 alias explore="tree -C | less -R"
+alias vim="nvim"
 
 . $HOME/.zsh_aliases
 
