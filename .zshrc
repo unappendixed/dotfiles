@@ -88,4 +88,4 @@ alias explore="tree -C | less -R"
 alias vim="nvim"
 
 . $HOME/.zsh_aliases
-
+. $HOME/.asdf/asdf.sh
