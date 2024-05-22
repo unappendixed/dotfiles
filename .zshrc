@@ -5,15 +5,10 @@ unsetopt autocd
 zstyle :compinstall filename '$HOME/.zshrc'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-export MOZ_ENABLE_MOZ=1
+# Completions
 
-export XDG_CONFIG_HOME=$HOME/.config/
+fpath=(~/.zsh/completions $fpath)
 
-export logseq=$HOME/Documents/logseq-graphs/
-
-# Make swaymsg work from inside tty
-# not working for some reason
-#export SWAYSOCK=$(find /run/user/$(id -u)/ -maxdepth 2 -name sway-ipc.* | head -1)
 
 alias ls='ls --color'
 PROMPT='%2T %B%F{green}%1~%f%b '
@@ -22,6 +17,7 @@ compinit
 # End of lines added by compinstall
 #
 unsetopt nomatch
+
 
 # HISTORY SETUP
 setopt SHARE_HISTORY
@@ -32,13 +28,6 @@ setopt HIST_EXPIRE_DUPS_FIRST
 
 bindkey ^P history-search-backward
 bindkey ^N history-search-forward
-
-
-export NVM_DIR="$HOME/.config//nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # make it pretty
 
