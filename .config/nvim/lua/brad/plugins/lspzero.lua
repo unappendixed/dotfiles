@@ -74,13 +74,8 @@ return {
     config = function()
         local lsp = require('lsp-zero')
 
-        lsp.preset('recommended')
 
         local cmp = require('cmp')
-
-        lsp.set_preferences({
-            --sign_icons = {}
-        })
 
 
         local function setBindings(client, bufnr)
@@ -97,7 +92,17 @@ return {
             vim.keymap.set({ "n", "i", "v" }, "<M-CR>", function() vim.lsp.buf.code_action() end, opts)
             vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
             vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-            vim.keymap.set("n", "<leader>vf", function() vim.lsp.buf.format() end, opts)
+            vim.keymap.set("n", "<leader>vf", function()
+
+                -- set conform binding here so it isn't overriden by LSP hook
+                local conform = require("conform")
+                if conform == nil then
+                    vim.lsp.buf.format()
+                else
+                    conform.format({bufnr = opts.buffer, lsp_fallback = true})
+                end
+
+            end, opts)
             vim.keymap.set("n", "<leader>vsr", "<cmd>LspRestart<CR>")
             vim.keymap.set("i", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
             vim.keymap.set("n", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
@@ -141,7 +146,7 @@ return {
             settings = {
                 ['nil'] = {
                     formatting = {
-                        command = {"nixpkgs-fmt"}
+                        command = { "nixpkgs-fmt" }
                     }
                 }
             }
