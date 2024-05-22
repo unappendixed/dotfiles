@@ -9,8 +9,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 fpath=(~/.zsh/completions $fpath)
 
-
-alias ls='ls --color'
 PROMPT='%2T %B%F{green}%1~%f%b '
 autoload -Uz compinit
 compinit
@@ -75,6 +73,7 @@ precmd() {
 
 alias explore="tree -C | less -R"
 alias vim="nvim"
+alias ls='ls --color'
 
 . $HOME/.zsh_aliases
 . $HOME/.asdf/asdf.sh
