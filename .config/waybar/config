@@ -14,7 +14,6 @@
     //     // "sway/window"
     // ],
     "modules-right": [
-        "custom/restart-hs",
         "mpris",
         "tray",
         "pulseaudio",
@@ -168,10 +167,6 @@
     //     "on-scroll-down": "waybar-mpris --send prev",
     //     "escape": true
     // },
-    "custom/restart-hs": {
-        "format": "Restart  ",
-        "on-click": "fh"
-    },
     "mpris": {
         "format": "{status_icon}\t{title} - {artist}\t{player_icon}",
         "on-click-right": "playerctld shift",
