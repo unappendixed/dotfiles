@@ -177,5 +177,11 @@ return {
                 }
             end
         end
+    },
+    {
+        "mfussenegger/nvim-dap-python",
+        config = function()
+            require("dap-python").setup("~/.python/.virtualenvs/debugpy/bin/python")
+        end
     }
 }
