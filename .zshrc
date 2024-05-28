@@ -73,8 +73,6 @@ precmd() {
 ### ALIASES
 
 alias explore="tree -C | less -R"
-alias vim="nvim"
 alias ls='ls --color'
 
 . $HOME/.zsh_aliases
-. $HOME/.asdf/asdf.sh
