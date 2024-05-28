@@ -45,6 +45,7 @@ zstyle ':vcs_info:git*' actionformats '%f{14}⏱ %*%f'
 zstyle ':vcs_info:git*' unstagedstr '?'
 zstyle ':vcs_info:git*' stagedstr '! '
 zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' disable-patterns "${(b)HOME}/code/mwse(|/*)"
 
 # RPROMPT='${vcs_info_msg_0_}'
 precmd() {
