@@ -19,7 +19,7 @@
         "pulseaudio",
         // "network",
         "backlight",
-        "keyboard-state",
+        // "keyboard-state",
         "clock",
         "clock#cal"
     ],
