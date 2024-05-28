@@ -136,7 +136,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {format_source}",
+        "format": "{volume}% {desc}",
         "format-bluetooth": "{volume}%  {format_source}",
         "format-bluetooth-muted": "  {format_source}",
         "format-muted": " {format_source}",
@@ -155,6 +155,8 @@
                 ""
             ]
         },
+        "max-length": 10,
+        "scroll-step": 5,
         "on-click": "pavucontrol -t 3"
     },
     // "custom/waybar-mpris": {
