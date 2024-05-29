@@ -213,6 +213,11 @@ label:focus {
     background-color: #eb4d4b;
 }
 
+#custom-restart-hs {
+    padding: 0 5px;
+    background-color: #dd8822;
+}
+
 #mpris {
     padding: 0 5px;
     background-color: @modal-color-hex;
