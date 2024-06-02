@@ -30,3 +30,5 @@
     difftool = true
 [includeIf "gitdir:~/gvr/**"]
     path = .gvr.gitconfig
+[rerere]
+    enabled = true
