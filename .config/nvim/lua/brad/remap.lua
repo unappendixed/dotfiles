@@ -80,3 +80,11 @@ vim.keymap.set("c", "<C-d>", "<Del>")
 vim.keymap.set("c", "<M-d>", "<C-Right><C-w>")
 vim.keymap.set("c", "", "<C-w>")
 
+vim.keymap.set("n", "<leader>ff", function()
+    local cursorPos = vim.api.nvim_win_get_cursor(0)
+    vim.opt.textwidth = 80
+    vim.opt.wrap = true
+    vim.opt.linebreak = true
+    vim.api.nvim_feedkeys("gggqGgg", "", true)
+    vim.api.nvim_win_set_cursor(0, cursorPos)
+end)
