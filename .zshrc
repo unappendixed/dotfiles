@@ -16,6 +16,9 @@ compinit
 #
 unsetopt nomatch
 
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M emacs "^[e" edit-command-line
 
 # HISTORY SETUP
 setopt SHARE_HISTORY
@@ -76,3 +79,13 @@ alias explore="tree -C | less -R"
 alias ls='ls --color'
 
 . $HOME/.zsh_aliases
+
+# Turso
+export PATH="/home/unappendixed/.turso:$PATH"
+
+export EDITOR="nvim"
+
+# Leave this last for gods' sake
+bindkey -e
+bindkey ^P history-search-backward
+bindkey ^N history-search-forward
