@@ -9,6 +9,13 @@ return {
 
             vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>")
             vim.keymap.set("n", "-", "<CMD>Oil<CR>")
+            vim.keymap.set("n", "cd", function() require("oil.actions").cd.callback() end)
+            vim.keymap.set("n", "<leader>ph", function()
+                local bufname = vim.api.nvim_buf_get_name(0)
+                if string.find(bufname, "oil://") ~= nil then
+                    require("oil").toggle_hidden()
+                end
+            end)
         end,
 
     },

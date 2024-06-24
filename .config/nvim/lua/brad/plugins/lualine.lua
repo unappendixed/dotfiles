@@ -2,14 +2,6 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-        local function proseCount()
-            if vim.bo.filetype == "markdown" then
-                return require("nvim-prose").word_count();
-            else
-                return ""
-            end
-        end
-
         local prose = require("nvim-prose")
 
         require('lualine').setup {
@@ -24,7 +16,7 @@ return {
                 },
                 ignore_focus = {},
                 always_divide_middle = true,
-                globalstatus = false,
+                globalstatus = true,
                 refresh = {
                     statusline = 1000,
                     tabline = 1000,
@@ -35,10 +27,13 @@ return {
                 lualine_a = { 'mode' },
                 lualine_b = { 'branch', 'diff', 'diagnostics' },
                 lualine_c = { 'filename' },
-                lualine_x = { {
-                    prose.word_count, cond = prose.is_available
-                },
-                'encoding', 'fileformat', 'filetype' },
+                lualine_x = {
+                    { prose.word_count, cond = prose.is_available },
+                    'encoding',
+                    'fileformat',
+                    'filetype',
+                }
+                ,
                 lualine_y = { 'progress' },
                 lualine_z = { 'location' }
             },
