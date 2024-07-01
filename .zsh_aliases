@@ -8,3 +8,18 @@ alias fix-headset='pactl set-card-profile alsa_card.usb-HP__Inc_HyperX_Cloud_III
 
 alias py="python3"
 alias vim="nvim"
+alias dco=dedoc_open
+alias dcs=dedoc_search
+
+dedoc_open() {
+    dedoc -c op $1 $2 | less -r
+}
+
+dedoc_search() {
+    if [[ -v $3 ]]
+    then
+        dedoc -c ss $1 $2 -o $3 | less -r
+    else
+    dedoc -c ss $1 $2 | less -r
+    fi
+}
