@@ -1,0 +1,2 @@
+goarano/zsh-lazy-load
+romkatv/powerlevel10k
