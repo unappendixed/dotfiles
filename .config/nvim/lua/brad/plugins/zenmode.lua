@@ -9,6 +9,7 @@ return {
                 width = 100,
                 height = 0.9,
             },
+            backdrop = 0.95,
             plugins = {
                 options = {
                     enabled = true,
