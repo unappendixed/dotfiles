@@ -16,7 +16,7 @@ dedoc_open() {
 }
 
 dedoc_search() {
-    if [[ -v $3 ]]
+    if [[ -z $3 ]]
     then
         dedoc -c ss $1 $2 -o $3 | less -r
     else
