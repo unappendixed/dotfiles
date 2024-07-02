@@ -18,8 +18,8 @@ dedoc_open() {
 dedoc_search() {
     if [[ -z $3 ]]
     then
-        dedoc -c ss $1 $2 -o $3 | less -r
+        dedoc -c ss $1 $2 | less -r
     else
-    dedoc -c ss $1 $2 | less -r
+        dedoc -c ss $1 $2 -o $3 | less -r
     fi
 }
