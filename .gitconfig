@@ -13,6 +13,8 @@
 	editor = nvim
 [pull]
 	rebase = false
+[push]
+    followTags = true
 [init]
 	defaultBranch = main
 [alias]
