@@ -22,12 +22,20 @@
     graph = log --oneline --graph --all
     dft = difftool
     dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
+    
 [diff]
     tool = difftastic
 [difftool]
     prompt = false
 [difftool "difftastic"]
     cmd = difft "$LOCAL" "$REMOTE"
+[merge]
+    tool = "nvim"
+[mergetool]
+    keepBackup = false
+    prompt = false
+[mergetool "nvim"]
+    cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
 [pager]
     difftool = true
 [includeIf "gitdir:~/gvr/**"]
