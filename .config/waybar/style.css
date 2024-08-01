@@ -4,8 +4,9 @@
     font-size: 13px;
 }
 
-@define-color bg-color-hex #332255;
-@define-color modal-color-hex #2980b9;
+@define-color bg-color-hex #313244;
+@define-color modal-color-hex #cba6f7;
+@define-color modal-textcolor-hex #11111b;
 
 window#waybar {
     background-color: @bg-color-hex;
@@ -92,7 +93,6 @@ button:hover {
 #scratchpad,
 #mpd {
     padding: 0 10px;
-    color: #ffffff;
 }
 
 #window,
@@ -173,8 +173,8 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #2980b9;
-    color: #ffffff;
+    background-color: @modal-color-hex;
+    color: @modal-textcolor-hex;
 }
 
 #pulseaudio.muted {
@@ -215,7 +215,8 @@ label:focus {
 
 #custom-restart-hs {
     padding: 0 5px;
-    background-color: #dd8822;
+    background-color: #f9e2af;
+    color: @modal-textcolor-hex;
 }
 
 #mpris {
@@ -223,6 +224,7 @@ label:focus {
     background-color: @modal-color-hex;
     min-width: 300px;
     border: 2px solid transparent;
+    color: @modal-textcolor-hex;
 }
 
 #mpris.playing {
@@ -240,7 +242,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: @modal-color-hex;
 }
 
 #tray > .passive {
