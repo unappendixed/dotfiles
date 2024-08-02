@@ -19,7 +19,6 @@
         "pulseaudio",
         "network",
         "backlight",
-        "keyboard-state",
         "battery",
         "clock",
         "clock#cal"

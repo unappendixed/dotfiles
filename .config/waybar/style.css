@@ -5,8 +5,11 @@
 }
 
 @define-color bg-color-hex #313244;
-@define-color modal-color-hex #cba6f7;
+@define-color accent-color-mauve #cba6f7;
+@define-color accent-color-teal #94e2d5;
+@define-color accent-color-rosewater #f5e0dc;
 @define-color modal-textcolor-hex #11111b;
+@define-color accent-color @accent-color-mauve;
 
 window#waybar {
     background-color: @bg-color-hex;
@@ -111,18 +114,16 @@ button:hover {
 }
 
 #clock {
-    background-color: #ffffff;
-    color: black;
+    background-color: @accent-color-rosewater;
+    color: #000000;
 }
 
 #battery {
-    background-color: #ffffff;
+    background-color: @accent-color-rosewater;
     color: #000000;
 }
 
 #battery.charging, #battery.plugged {
-    /* color: #ffffff; */
-    /* background-color: #26A65B; */
 }
 
 @keyframes blink {
@@ -160,12 +161,13 @@ label:focus {
 }
 
 #backlight {
-    background-color: #ffffff;
+    background-color: @accent-color-rosewater;
     color: #000000;
 }
 
 #network {
-    background-color: #2980b9;
+    background-color: @accent-color;
+    color: @modal-textcolor-hex;
 }
 
 #network.disconnected {
@@ -173,7 +175,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: @modal-color-hex;
+    background-color: @accent-color;
     color: @modal-textcolor-hex;
 }
 
@@ -215,7 +217,7 @@ label:focus {
 
 #mpris {
     padding: 0 5px;
-    background-color: @modal-color-hex;
+    background-color: @accent-color;
     min-width: 300px;
     border: 2px solid transparent;
     color: @modal-textcolor-hex;
@@ -236,7 +238,7 @@ label:focus {
 }
 
 #tray {
-    background-color: @modal-color-hex;
+    background-color: @accent-color;
 }
 
 #tray > .passive {
@@ -283,8 +285,8 @@ label:focus {
 }
 
 #keyboard-state {
-    background: #97e1ad;
-    color: #000000;
+    background: @accent-color-teal;
+    color: @modal-textcolor-hex;
     padding: 0 0px;
     /* margin: 0 5px; */
     min-width: 16px;
