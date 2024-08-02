@@ -11,6 +11,7 @@ path+=($HOME/.local/bin)
 path+=($HOME/.node/node_modules/bin)
 path+=($HOME/.node/bin)
 path+=($HOME/.opam/default/bin)
+path+=($HOME/dotfiles/scripts)
 
 export XDG_DATA_DIRS="/usr/share:/usr/local/share:"
 XDG_DATA_DIRS+="/var/lib/flatpak/exports/share:"
