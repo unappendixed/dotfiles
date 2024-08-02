@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#!/bin/bash
+
+# Capture the glob pattern from the first argument
+pattern="$1"
+
+# Use an array to hold the expanded list of files
+# Use `shopt` to enable extended globbing if needed
+shopt -s nullglob
+
+# Expand the glob pattern into an array
+files=($pattern)
+
+# Check if files array is empty
+if [ ${#files[@]} -eq 0 ]; then
+    echo "No files matched the pattern: $pattern"
+    exit 1
+fi
+
+rsync -av -e ssh "${files[@]}" unappendixed@warbler:/data/navidrome/music
+
