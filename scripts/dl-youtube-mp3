@@ -1,8 +1,48 @@
-#!/bin/sh
+#!/bin/bash
 
-youtube-dl --extract-audio \
-    --audio-format mp3 \
-    --embed-thumbnail \
-    --add-metadata \
-    --output "%(title)s.%(ext)s" \
-    $1
+Wait=30
+Tries=4
+
+
+# Set options for the getopt command
+options=$(getopt -o "nag" -l "wait:,tries:" -- "$@")
+if [ $? -ne 0 ]; then
+    echo "Invalid arguments."
+    exit 1
+fi
+eval set -- "$options"
+
+# Read the named argument values
+while [ $# -gt 1 ]; do
+    case "$1" in
+        --wait) Wait="$2"; shift;;
+        --tries) Tries="$2"; shift;;
+        # --) shift;;
+    esac
+    shift
+done
+
+i=1
+while [ $i -le $Tries ]; do
+    echo "Attempt $i of $Tries"
+    output=$(youtube-dl --extract-audio \
+        --audio-format mp3 \
+        --embed-thumbnail \
+        --add-metadata \
+        --output "%(title)s.%(ext)s" \
+        $1 | tee /dev/tty)
+    $(echo $output | grep -q "[Er]ror")
+    out=$?
+    let i+=1
+    if [[ $out -ne 0 ]]; then
+        break
+    fi
+    echo "Sleeping for $Wait s"
+    if [[ $i -le $Tries ]]; then
+        sleep $Wait
+    fi
+done
+
+if [ $? -ne 0 ]; then
+    exit 1
+fi
