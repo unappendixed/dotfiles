@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 # Capture the glob pattern from the first argument
 pattern="$1"
 
@@ -12,11 +10,28 @@ shopt -s nullglob
 # Expand the glob pattern into an array
 files=($pattern)
 
-# Check if files array is empty
+# If the files array is empty, check if the input was an exact file name
+# Check if the input is an exact file and if it exists
+if [ -f "$pattern" ]; then
+    files=("$pattern")
+else
+    # If it's not an exact file, treat it as a glob pattern and expand into an array
+    files=($pattern)
+
+    # Check if the files array is empty
+    if [ ${#files[@]} -eq 0 ]; then
+        echo "No files matched the pattern: $pattern"
+        exit 1
+    fi
+fi
+
 if [ ${#files[@]} -eq 0 ]; then
     echo "No files matched the pattern: $pattern"
     exit 1
+else
+    echo "${files[@]}"
+    rsync -av -e ssh "${files[@]}" unappendixed@warbler:/data/navidrome/music
+    exit 0
 fi
 
-rsync -av -e ssh "${files[@]}" unappendixed@warbler:/data/navidrome/music
 
