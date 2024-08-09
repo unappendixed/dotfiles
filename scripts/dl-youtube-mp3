@@ -25,7 +25,7 @@ done
 i=1
 while [ $i -le $Tries ]; do
     echo "Attempt $i of $Tries"
-    output=$(youtube-dl --extract-audio \
+    output=$(yt-dlp --extract-audio \
         --audio-format mp3 \
         --embed-thumbnail \
         --add-metadata \
