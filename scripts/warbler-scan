@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ssh warbler 'navidrome scan -f --musicfolder /data/navidrome/music --datafolder /data/navidrome/data --cachefolder /data/navidrome/cache'
