@@ -23,6 +23,7 @@ return {
         },
         config = function()
             local gitblame = require('gitblame')
+            gitblame.disable(true)
             vim.keymap.set("n", "<leader>gb", function()
                 gitblame.toggle()
             end)
