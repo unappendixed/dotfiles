@@ -1,2 +1,5 @@
 .tmux/plugins/
+.tmux/theme
+.config/alacritty/theme.toml
+.config/nvim/lua/brad/theme-active.lua
 .config/ncspot/*.cbor

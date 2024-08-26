@@ -20,8 +20,10 @@
 [alias]
 	install-alias = ! git config --local alias.ensure-update '! git fetch && git submodule update --init --recursive --remote'
     graph = log --oneline --graph --all
+    graphp = "!git -c color.ui=always log --oneline --graph --all | less -R"
     dft = difftool
     dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
+    dft-show = "!f() { git show --format=fuller --no-patch \"$1\"; echo; for file in $(git diff --name-only \"$1^\" \"$1\"); do mkdir -p /tmp/difftastic/prev_$(dirname \"$file\") /tmp/difftastic/next_$(dirname \"$file\"); git show \"$1^:$file\" > /tmp/difftastic/prev_$file; git show \"$1:$file\" > /tmp/difftastic/next_$file; difft /tmp/difftastic/prev_$file /tmp/difftastic/next_$file; done; rm -rf /tmp/difftastic; }; f"
 [diff]
     tool = difftastic
 [difftool]
