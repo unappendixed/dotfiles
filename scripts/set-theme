@@ -10,6 +10,9 @@ TMUX_LN="$HOME/dotfiles/.tmux/theme"
 TMUX_THEME="$HOME/dotfiles/themes/$1/tmux.conf"
 TMUX_CONF="$HOME/.tmux.conf"
 
+NVIM_LN="$HOME/dotfiles/.config/nvim/lua/brad/theme-active.lua"
+NVIM_THEME="$HOME/dotfiles/themes/$1/nvim.lua"
+
 if ! (stat "$ALACRITTY_THEME" > /dev/null); then
     echo "Invalid theme for Alacritty!"
     exit 1
@@ -20,13 +23,20 @@ if ! (stat "$TMUX_THEME" > /dev/null); then
     exit 1
 fi
 
+if ! (stat "$NVIM_THEME" > /dev/null); then
+    echo "Invalid theme for Neovim!"
+    exit 1
+fi
+
 # Unlinks
 unlink "$ALACRITTY_LN"
 unlink "$TMUX_LN"
+unlink "$NVIM_LN"
 
 # Links
 ln -s "$ALACRITTY_THEME" "$ALACRITTY_LN"
 ln -s "$TMUX_THEME" "$TMUX_LN"
+ln -s "$NVIM_THEME" "$NVIM_LN"
 
 
 # Reload

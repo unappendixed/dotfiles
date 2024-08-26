@@ -1,5 +1,6 @@
 function ColorMyPencils(color)
-    color = color or "catppuccin"
+    local envColor = require('brad.theme-active').themeName
+    color = envColor or color
     vim.cmd.colorscheme(color)
 end
 
@@ -15,7 +16,7 @@ return {
                     conditionals = {}
                 }
             })
-            ColorMyPencils()
+            ColorMyPencils('catppuccin')
         end,
     },
     { "ellisonleao/gruvbox.nvim", priority = 1000, config = true },
