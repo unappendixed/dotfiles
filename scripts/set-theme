@@ -1,0 +1,34 @@
+#!/bin/bash
+
+THEME="$1"
+
+ALACRITTY_LN="$HOME/dotfiles/.config/alacritty/theme.toml"
+ALACRITTY_THEME="$HOME/dotfiles/themes/$1/alacritty.toml"
+ALACRITTY_CONF="$HOME/dotfiles/.config/alacritty/alacritty.toml"
+
+TMUX_LN="$HOME/dotfiles/.tmux/theme"
+TMUX_THEME="$HOME/dotfiles/themes/$1/tmux.conf"
+TMUX_CONF="$HOME/.tmux.conf"
+
+if ! (stat "$ALACRITTY_THEME" > /dev/null); then
+    echo "Invalid theme for Alacritty!"
+    exit 1
+fi
+
+if ! (stat "$TMUX_THEME" > /dev/null); then
+    echo "Invalid theme for tmux!"
+    exit 1
+fi
+
+# Unlinks
+unlink "$ALACRITTY_LN"
+unlink "$TMUX_LN"
+
+# Links
+ln -s "$ALACRITTY_THEME" "$ALACRITTY_LN"
+ln -s "$TMUX_THEME" "$TMUX_LN"
+
+
+# Reload
+touch "$ALACRITTY_CONF"
+tmux source-file "$TMUX_CONF" &> /dev/null
