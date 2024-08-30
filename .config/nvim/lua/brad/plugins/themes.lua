@@ -1,5 +1,6 @@
 function ColorMyPencils(color)
-    color = color or "catppuccin"
+    local envColor = require('brad.theme-active').themeName
+    color = envColor or color
     vim.cmd.colorscheme(color)
 end
 
@@ -15,8 +16,26 @@ return {
                     conditionals = {}
                 }
             })
-            ColorMyPencils()
         end,
     },
-    { "ellisonleao/gruvbox.nvim", priority = 1000, config = true },
+    {
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000,
+        config = function()
+            require('gruvbox').setup({
+                overrides = {
+                    SignColumn = { link = "Normal" },
+                    GruvboxGreenSign = { bg = "" },
+                    GruvboxOrangeSign = { bg = "" },
+                    GruvboxPurpleSign = { bg = "" },
+                    GruvboxYellowSign = { bg = "" },
+                    GruvboxRedSign = { bg = "" },
+                    GruvboxBlueSign = { bg = "" },
+                    GruvboxAquaSign = { bg = "" },
+                },
+            })
+        end
+    },
+    { 'Shatur/neovim-ayu' },
+    { 'Mofiqul/dracula.nvim' }
 }

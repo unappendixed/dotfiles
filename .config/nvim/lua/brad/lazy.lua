@@ -1,5 +1,7 @@
 require("lazy").setup("brad.plugins")
 
+ColorMyPencils('catppuccin')
+
 
 -- 
     --use 'wbthomason/packer.nvim'
