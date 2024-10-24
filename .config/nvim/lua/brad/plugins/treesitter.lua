@@ -6,7 +6,10 @@ return {
 
             require'nvim-treesitter.configs'.setup {
                 -- A list of parser names, or "all" (the four listed parsers should always be installed)
-                ensure_installed = { "c", "lua", "vim", "javascript", "typescript", "rust" },
+                ensure_installed = {},
+                ignore_install = {},
+                modules = {},
+
 
                 -- Install parsers synchronously (only applied to `ensure_installed`)
                 sync_install = false,
@@ -24,6 +27,9 @@ return {
                     enable = true,
                     additional_vim_regex_highlighting = {"javascript"},
                 },
+                -- indent = {
+                --     enable = true
+                -- },
                 -- ...
                 rainbow = {
                     enable = true,

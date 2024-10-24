@@ -1,0 +1,10 @@
+{
+    "docstring" : {
+        "prefix": "csdoc",
+        "body": [
+            "/// <summary>",
+            "/// $0",
+            "/// </summary>"
+        ]
+    }
+}

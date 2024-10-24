@@ -8,6 +8,7 @@ return {
     {
         "catppuccin/nvim",
         name = "catppuccin",
+        priority = 1000,
         config = function()
             require('catppuccin').setup({
                 -- values: latte, frappe, machiatto, mocha
@@ -36,6 +37,12 @@ return {
             })
         end
     },
-    { 'Shatur/neovim-ayu' },
-    { 'Mofiqul/dracula.nvim' }
+    {
+        'Shatur/neovim-ayu',
+        priority = 1000,
+    },
+    {
+        'Mofiqul/dracula.nvim',
+        priority = 1000,
+    }
 }
