@@ -140,6 +140,31 @@ return {
             filetypes = { "html", "templ" }
         })
 
+        local vue_language_server_path = '/home/unappendixed/.node/node_modules/lib/node_modules/@vue/typescript-plugin'
+
+
+        lspconfig.ts_ls.setup {
+            init_options = {
+                plugins = {
+                    {
+                        name = '@vue/typescript-plugin',
+                        location = vue_language_server_path,
+                        languages = { 'vue' },
+                    },
+                },
+            },
+            filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+        }
+
+        -- No need to set `hybridMode` to `true` as it's the default value
+        lspconfig.volar.setup({
+            init_options = {
+                vue = {
+                    hybridMode = true,
+                }
+            }
+        })
+
 
         lspconfig.nil_ls.setup({
             settings = {
@@ -149,6 +174,29 @@ return {
                     }
                 }
             }
+        })
+
+        lspconfig.omnisharp.setup({
+            settings = {
+                ["csharp.debug.logging.diagnosticsLog.protocolMessages"] = true
+            },
+            on_attach = function(client, bufnr)
+                client.server_capabilities.documentFormattingProvider = false
+                client.server_capabilities.documentRangeFormattingProvider = false
+            end
+        })
+
+        lspconfig.gdscript.setup({
+            on_attach = function(client)
+                local _notify = client.notify
+                client.notify = function(method, params)
+                    if method == 'textDocument/didClose' then
+                        -- Godot doesn't implement didClose yet
+                        return
+                    end
+                    _notify(method, params)
+                end
+            end
         })
 
         vim.filetype.add({ extension = { templ = "templ" } })

@@ -1,5 +1,4 @@
 require("lazy").setup("brad.plugins")
-
 ColorMyPencils('catppuccin')
 
 

@@ -5,6 +5,7 @@ return {
             require("dap").set_log_level("TRACE")
 
             vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
+            vim.keymap.set('n', '<leader>dc', function() require('dap').continue() end)
             vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
             vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
             vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
@@ -107,6 +108,22 @@ return {
         config = function()
             vim.keymap.set("n", "<leader>db", function() require 'telescope'.extensions.dap.list_breakpoints {} end)
         end,
+    },
+    {
+        "NicholasMata/nvim-dap-cs",
+        dependencies = { 'mfussenegger/nvim-dap' },
+        config = function()
+            require("dap-cs").setup({
+                dap_configurations = {
+                    {
+                        type = "coreclr",
+                        name = "Launch XUnit Tests",
+                        request = "launch",
+                        args = {"vstest"}
+                    }
+                }
+            })
+        end
     },
     {
         "mxsdev/nvim-dap-vscode-js",
